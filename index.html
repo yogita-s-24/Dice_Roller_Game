@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Roller</title>
     <style>
-        body{
-           
+        body {
+
             background-color: black;
         }
+
         .dice-roller-container {
-           
+
             width: 250px;
             background-color: rgba(227, 196, 196, 0.151);
             display: block;
@@ -31,6 +32,21 @@
             margin-right: auto;
             margin-top: 20px;
 
+
+            
+            /* animation-name: dice-roller;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: alternate;
+            animation-timing-function: ease-in-out;
+            animation-delay: 3s; */
+        }
+
+        #dice:hover {
+            animation:rotate1 2s linear infinite;
+            /* transition: all 0.3s ease-in-out;
+            transform: rotate(360deg); */
+
         }
 
         .dice-btn-container {
@@ -38,16 +54,17 @@
             margin-left: auto;
             margin-right: auto;
             font-size: 20px;
-            color:black;
+            color: black;
             cursor: pointer;
-            border:2px solid crimson;
+            border: 2px solid crimson;
             background-color: tan;
             border-radius: 15px;
             padding: 5px;
+        
         }
 
         .dice-btn-container:hover {
-          box-shadow: 1px 1px 3px 1px #c2c2d6;
+            box-shadow: 1px 1px 3px 1px #c2c2d6;
         }
 
         .dice-roller-text {
@@ -56,6 +73,7 @@
             font-size: 50px;
 
         }
+    
     </style>
 
 </head>
@@ -63,43 +81,45 @@
 <body onload="roll()">
     <div class="container"></div>
     <div class="dice-roller-container">
-        <img src="./img/six.png" onclick="roll()" alt="Dice" class="dice" id="dice">
+        <img src="./img/six.png" onclick="roll()" alt="Dice" class="dice" id="dice" >
+    
         <h3 class="dice-roller-text" id="dice-roller-text">1</h3>
         <button class="dice-btn-container" onclick="roll()">Roll 🎲</button>
     </div>
-</div>
-<script>
-    function roll()
-    {
-        const min =1;
-        const max=6;
-        const number = Math.floor(Math.random() * (max - min + 1) + min)
-        
-        document.getElementById("dice-roller-text").innerHTML = number;
+    </div>
+    <script>
 
-        const diceImg = document.getElementById("dice");
-        
-        if(number == 1){
-            diceImg.src="./img/one.png";
+        function roll() {
+            const min = 1;
+            const max = 6;
+            const number = Math.floor(Math.random() * (max - min + 1) + min)
+
+            document.getElementById("dice-roller-text").innerHTML = number;
+
+            const diceImg = document.getElementById("dice");
+
+            if (number == 1) {
+                diceImg.src = "./img/one.png";
+                const diceImg = document.getElementById("dice");
+            }
+            else if (number == 2) {
+                diceImg.src = "./img/two.png";
+            }
+            else if (number == 3) {
+                diceImg.src = "./img/three.png";
+            }
+            else if (number == 4) {
+                diceImg.src = "./img/four.png";
+            }
+            else if (number == 5) {
+                diceImg.src = "./img/five.png";
+            }
+            else if (number == 6) {
+                diceImg.src = "./img/six.png";
+            }
         }
-        else if(number==2){
-            diceImg.src="./img/two.png";
-        }
-        else if(number==3){
-            diceImg.src="./img/three.png";
-        }
-        else if(number==4){
-            diceImg.src="./img/four.png";
-        }
-        else if(number==5){
-            diceImg.src="./img/five.png";
-        }
-        else if(number==6){
-            diceImg.src="./img/six.png";
-        }
-    }
-</script>
-  
+    </script>
+
 </body>
 
 </html>
