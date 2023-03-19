@@ -12,6 +12,17 @@
             background-color: black;
         }
 
+        .container{
+            background-color: azure;
+            margin: auto;
+            text-align: center;
+            padding: 5px;
+            width: 50%;
+            border-radius: 20px;
+            font-size: 20px;
+            border: 6px double crimson;
+
+        }
         .dice-roller-container {
 
             width: 250px;
@@ -33,7 +44,7 @@
             margin-top: 20px;
 
 
-            
+
             /* animation-name: dice-roller;
             animation-duration: 2s;
             animation-iteration-count: 1;
@@ -42,12 +53,12 @@
             animation-delay: 3s; */
         }
 
-        /* #dice:hover {
-            animation:rotate1 2s linear infinite;
-            /* transition: all 0.3s ease-in-out;
-            transform: rotate(360deg); 
+        #dice:hover {
+            /* animation:rotate1 2s linear infinite; */
+            transition: all 0.3s ease-in-out;
+            transform: rotate(360deg);
 
-        } */
+        }
 
         .dice-btn-container {
             display: block;
@@ -60,7 +71,7 @@
             background-color: tan;
             border-radius: 15px;
             padding: 5px;
-        
+
         }
 
         .dice-btn-container:hover {
@@ -73,20 +84,21 @@
             font-size: 50px;
 
         }
-    
     </style>
 
 </head>
 
 <body onload="roll()">
-    <div class="container"></div>
-    <div class="dice-roller-container">
-        <img src="./img/six.png" onclick="roll()" alt="Dice" class="dice" id="dice" >
-    
-        <h3 class="dice-roller-text" id="dice-roller-text">1</h3>
-        <button class="dice-btn-container" onclick="roll()">Roll 🎲</button>
+    <div class="container"> 
+        <h2>🎲 Dice Roller Game 🎲</h2>
     </div>
-    </div>
+        <div class="dice-roller-container">
+            <img src="./img/six.png" onmouseover="roll()" alt="Dice" class="dice" id="dice">
+
+            <h3 class="dice-roller-text" id="dice-roller-text">1</h3>
+            <button class="dice-btn-container" onclick="roll()"> 🎲 Roll 🎲</button>
+        </div>
+  
     <script>
 
         function roll() {
@@ -100,7 +112,7 @@
 
             if (number == 1) {
                 diceImg.src = "./img/one.png";
-                const diceImg = document.getElementById("dice");
+                // const diceImg = document.getElementById("dice");
             }
             else if (number == 2) {
                 diceImg.src = "./img/two.png";
@@ -119,7 +131,6 @@
             }
         }
     </script>
-
 </body>
 
 </html>
