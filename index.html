@@ -12,7 +12,7 @@
             background-color: black;
         }
 
-        .container{
+        .container {
             background-color: azure;
             margin: auto;
             text-align: center;
@@ -23,6 +23,7 @@
             border: 6px double crimson;
 
         }
+
         .dice-roller-container {
 
             width: 250px;
@@ -89,16 +90,16 @@
 </head>
 
 <body onload="roll()">
-    <div class="container"> 
+    <div class="container">
         <h2>🎲 Dice Roller Game 🎲</h2>
     </div>
-        <div class="dice-roller-container">
-            <img src="./img/six.png" onmouseover="roll()" alt="Dice" class="dice" id="dice">
+    <div class="dice-roller-container">
+        <img src="./img/six.png" onmouseover="roll()" alt="Dice" class="dice" id="dice">
 
-            <h3 class="dice-roller-text" id="dice-roller-text">1</h3>
-            <button class="dice-btn-container" onclick="roll()"> 🎲 Roll 🎲</button>
-        </div>
-  
+        <h3 class="dice-roller-text" id="dice-roller-text">1</h3>
+        <button class="dice-btn-container" onclick="roll()"> 🎲 Roll 🎲</button>
+    </div>
+
     <script>
 
         function roll() {
@@ -110,25 +111,31 @@
 
             const diceImg = document.getElementById("dice");
 
-            if (number == 1) {
-                diceImg.src = "./img/one.png";
-                // const diceImg = document.getElementById("dice");
-            }
-            else if (number == 2) {
-                diceImg.src = "./img/two.png";
-            }
-            else if (number == 3) {
-                diceImg.src = "./img/three.png";
-            }
-            else if (number == 4) {
-                diceImg.src = "./img/four.png";
-            }
-            else if (number == 5) {
-                diceImg.src = "./img/five.png";
-            }
-            else if (number == 6) {
-                diceImg.src = "./img/six.png";
-            }
+            //Without using if else ladder only used 115 and 116 line logic 
+            //In this case you can used array logic for decreasing our code
+            const diceImages = ["./img/one.png", "./img/two.png", "./img/three.png", './img/four.png', "./img/five.png", "./img/six.png"];
+            dice.src = diceImages[number - 1];
+
+
+            // if (number == 1) {
+            //     diceImg.src = "./img/one.png";
+
+            // }
+            // else if (number == 2) {
+            //     diceImg.src = "./img/two.png";
+            // }
+            // else if (number == 3) {
+            //     diceImg.src = "./img/three.png";
+            // }
+            // else if (number == 4) {
+            //     diceImg.src = "./img/four.png";
+            // }
+            // else if (number == 5) {
+            //     diceImg.src = "./img/five.png";
+            // }
+            // else if (number == 6) {
+            //     diceImg.src = "./img/six.png";
+            // }
         }
     </script>
 </body>
